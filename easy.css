@@ -112,9 +112,9 @@ h{
     left:25px;}
   
  #win
- { left:10%;
+ { left:5%;
     width:90%;
-    height: 80%;
+    height: 90%;
     font-size:20PX;
      z-index=5;
   }
