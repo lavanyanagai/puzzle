@@ -25,9 +25,9 @@ BODY{
  { position :absolute;
    background-color: aqua;
    border-radius: 12px;
-   top: 30%;
-   right: 250px;
-   width: 55px;
+   top: 25%;
+   right: 40%;
+   width: 65px;
    font-size:20px;
    font-weight:bold;
    text-align: center;
@@ -38,9 +38,9 @@ BODY{
  { position :absolute;
    background-color: aqua;
    border-radius: 12px;
-   top: 30%;
-   left: 250px;
-   width: 55px;
+   top: 25%;
+   left: 40%;
+   width: 65px;
    font-size:20px;
    font-weight:bold;
    text-align: center;
