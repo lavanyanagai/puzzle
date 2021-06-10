@@ -46,8 +46,8 @@ h{
  { position :absolute;
    display:none;
    top: 80px;
-   left:280px; 
-   width: 70%;
+   left:20px; 
+   width: 80%;
   height: 500px;
   font-size:30PX;
   font-weight:bold;
