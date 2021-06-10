@@ -103,17 +103,16 @@ h{
         background-position: 0% 50%;
     }
 }
-@media screen and (max-width: 600px){
+@media only screen and (max-width: 600px){
 
 .container
- { top: 20%;
-   right:0%
+ { right:0%;
    width: 55px;
   }
 
 .container1
- { top: 20%;
-   left:0%
+ { 
+   left:0%;
    width: 55px;
   }
 }
