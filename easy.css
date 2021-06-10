@@ -25,29 +25,29 @@ BODY{
  { position :absolute;
    background-color: aqua;
    border-radius: 12px;
-   top: 20%;
-   right :40%;
-   width: 65px;
+   top: 30%;
+   right: 250px;
+   width: 55px;
    font-size:20px;
    font-weight:bold;
    text-align: center;
    border: 4px solid red;
-   z-index:-1;
   }
 
 .container1
  { position :absolute;
    background-color: aqua;
    border-radius: 12px;
-   top: 20%;
-   left:40%;
-   width: 65px;
+   top: 30%;
+   left: 250px;
+   width: 55px;
    font-size:20px;
    font-weight:bold;
    text-align: center;
    border: 4px solid red;
-   z-index:-1;
   }
+
+
 
 h{ 
   font-family :Georgia;
@@ -88,8 +88,7 @@ h{
   border-radius: 12px;
   cursor:pointer;
 }
-
-
+        
   @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -101,17 +100,10 @@ h{
         background-position: 0% 50%;
     }
 }
-
-@media only screen and (max-width: 600px) {
-
-.container
- { right:0%;
-   width: 55px;
+@media screen and (max-width: 600px) {
+  .container {
+    right:25px;
   }
-
-.container1
- { 
-   left:0%;
-   width: 55px;
-  }
+  .container1
+  {left:25px;}
 }
