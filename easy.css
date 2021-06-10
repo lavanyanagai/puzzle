@@ -88,7 +88,10 @@ h{
   border-radius: 12px;
   cursor:pointer;
 }
-        
+
+ @-ms-viewport{
+  width: device-width;
+}   
   @keyframes gradient {
     0% {
         background-position: 0% 50%;
