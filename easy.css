@@ -104,11 +104,11 @@ h{
 }
 @media screen and (max-width: 600px) {
   .container {
-    top:12%;
+    top:15%;
     right:25px;
   }
   .container1
-  { top:12%;
+  { top:15%;
     left:25px;}
   
  #win
