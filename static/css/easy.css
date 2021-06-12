@@ -51,11 +51,12 @@ BODY{
 
 
 
-h{ 
+h { 
   font-family :Georgia;
   font-size :10px;
   font-style :italic ;
 }
+
 
 #win
  { position :absolute;
@@ -75,6 +76,11 @@ h{
    animation: gradient 5s ease infinite;
    z-index=5;
   }
+
+button {
+   background-color: gold; 
+   padding: 4px 15px;
+}
 
  #button1 {
  background-color: blue; 
