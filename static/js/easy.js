@@ -1,7 +1,6 @@
 const color3 =[["black","black","black"],["black","black","black"],["black","black","black"]];
 const color5 =[["black","black","black","black","black"],                      ["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"]];
 var move=0 ,s=0;
-var myaudio =new Audio('clap.mp3');
 function shuffle() {
 for (var row=1;row<=5;row++) { 
    for (var column=1;column<=5;column++) {  
