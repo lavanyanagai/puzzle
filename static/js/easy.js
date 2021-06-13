@@ -1,7 +1,7 @@
 const color3 =[["black","black","black"],["black","black","black"],["black","black","black"]];
 const color5 =[["black","black","black","black","black"],                      ["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"]];
 var move=0 ,s=0;
-var sound =new sound("clap.mp3");
+var myaudio =new Audio('clap.mp3');
 function shuffle() {
 for (var row=1;row<=5;row++) { 
    for (var column=1;column<=5;column++) {  
@@ -182,7 +182,7 @@ function issolved()
  var sec = document.getElementById("seconds").innerHTML;
  var min= document.getElementById("minutes").innerHTML;  
  document.getElementById("win").style.display = "block";
-  sound.play(); 
+  myaudio.play(); 
  document.getElementById("message1").innerText=" MOVES : "+move ;
  document.getElementById("message2").innerText="TIME : "+min+":"+sec;  
  var s=score(min,sec,move); 
@@ -244,19 +244,6 @@ function leaderboard()
  document.getElementById("topper") .innerHTML= y.toUpperCase()+"-"+x;
 }
 
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}
+
 
 
