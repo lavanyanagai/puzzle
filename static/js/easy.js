@@ -230,9 +230,9 @@ function topscorer(currentscore)
 }
 
 function leaderboard()
-{ var x,y,t=0;
+{ var x,y;
   if(localStorage.getItem("topscore")==null)
-     { localStorage.setItem("topscore",t);
+     { localStorage.setItem("topscore",0);
        localStorage.setItem("topscorername","NONE");
       }
   x= localStorage.getItem("topscore");
