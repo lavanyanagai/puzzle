@@ -27,7 +27,9 @@ function sqshuffle()
      }
    }
 }  
-
+function start()
+{  resettimer();
+  document.getElementById(start) .style.display="none";
 
 function getcolor(){
   var color;
@@ -232,8 +234,8 @@ function topscorer(currentscore)
 function leaderboard()
 { var x,y,t=0;
   if(localStorage.getItem("topscore")==null)
-     { localStorage.setItem("topscore","t");
-       localStorage.setItem("topscorername","none");
+     { localStorage.setItem("topscore","0");
+       localStorage.setItem("topscorername","NONE");
       }
   x= localStorage.getItem("topscore");
   y= localStorage.getItem("topscorername");
