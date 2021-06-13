@@ -26,14 +26,9 @@ function sqshuffle()
     color3[row-1][col-1]= document.getElementById("s"+row+col) .style.backgroundColor;
      }
    }
-} 
+}  
 
 
-function start()
-{  resettimer();
-   document.getElementById("s"+row+col) .style.backgroundColor;
-}
- 
 function getcolor(){
   var color;
   var fail=1;
