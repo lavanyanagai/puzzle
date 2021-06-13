@@ -1,24 +1,20 @@
-var move=0 ,s=0;
 const color3 =[["black","black","black"],["black","black","black"],["black","black","black"]];
-const color5 =[["black","black","black","black","black"],                      
-               ["black","black","black","black","black"],
-               ["black","black","black","black","black"],
-               ["black","black","black","black","black"],
-               ["black","black","black","black","black"]];
-var audio =new Audio("clap.mp3");
+const color5 =[["black","black","black","black","black"],                      ["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"],["black","black","black","black","black"]];
+var move=0 ,s=0;
 function shuffle() {
 for (var row=1;row<=5;row++) { 
    for (var column=1;column<=5;column++) {  
-     var row2=Math.floor(Math.random()*5 + 1); 
-      var column2=Math.floor(Math.random()*5 + 1); 
+    var row2=Math.floor(Math.random()*5 + 1); 
+    var column2=Math.floor(Math.random()*5 + 1); 
        swapTiles("cell"+row+column,"cell"+row2+column2); 
   } 
 } 
- for (var row=1;row<=5;row++) { 
+for (var row=1;row<=5;row++) { 
    for (var column=1;column<=5;column++) {  
      color5[row-1][column-1]= document.getElementById("cell"+row+column) .style.backgroundColor;
-   } 
-}     
+ 
+  } 
+}   
 }
 
 var y=0,r=0,w=0,l=0,o=0,b=0;
@@ -26,11 +22,12 @@ function sqshuffle()
 { y=0,r=0,w=0,l=0,o=0,b=0;
   for (var row=1;row<=3;row++) { 
   for (var col=1;col<=3;col++) { 
-      document.getElementById("s"+row+col) .style.backgroundColor = getcolor();
-      color3[row-1][col-1]= document.getElementById("s"+row+col) .style.backgroundColor;
+    document.getElementById("s"+row+col) .style.backgroundColor = getcolor();
+    color3[row-1][col-1]= document.getElementById("s"+row+col) .style.backgroundColor;
      }
    }
 }  
+
 
 function getcolor(){
   var color;
@@ -67,6 +64,7 @@ function resettimer()
 function reload()
 {sqshuffle();
  shuffle();
+ leaderboard();
  document.getElementById("mov") .innerHTML= 0; 
  document.getElementById("win").style.display = "none";
  move=0; totalSeconds = 0;
@@ -82,16 +80,7 @@ function stopTimer()
    document.getElementById("timer").innerHTML = m + ":" + s;    
 } 
 
-
-function newgame()
-{ reload();
- }
-
-
- function start()
-{ resettimer();   }
  
-
 function reset()
 { for (var row=1;row<=5;row++) { 
   for (var col=1;col<=5;col++) { 
@@ -191,12 +180,12 @@ function issolved()
  var sec = document.getElementById("seconds").innerHTML;
  var min= document.getElementById("minutes").innerHTML;  
  document.getElementById("win").style.display = "block";
- audio.play(); 
  document.getElementById("message1").innerText=" MOVES : "+move ;
  document.getElementById("message2").innerText="TIME : "+min+":"+sec;  
  var s=score(min,sec,move); 
+ topscorer(s); 
  document.getElementById("message").innerText=" SCORE : "+s; 
- } 
+} 
 
 function score(min,sec,move)
 { min = min*60;
@@ -226,3 +215,28 @@ function pad(val)
      { return valString; }
 }
 
+
+
+function topscorer(currentscore)
+{
+  var highscore = localStorage.getItem("topscore");
+  if (currentscore >highscore)
+    { localStorage.setItem("topscore",currentscore);
+      var name = prompt("ENTER YOUR NAME");
+      localStorage.setItem("topscorername",name);
+      document.getElementById("message4").innerText=" YOU ARE THE TOP SCORER ";          }
+  else
+  { document.getElementById("message4").innerText=" TOP SCORE : "+highscore; }
+}
+
+function leaderboard()
+{ var x,y,t=0;
+  if(localStorage.getItem("topscore")==null)
+     { localStorage.setItem("topscore","t");
+       localStorage.setItem("topscorername","none");
+      }
+  x= localStorage.getItem("topscore");
+  y= localStorage.getItem("topscorername");
+ document.getElementById("board") .innerHTML= "LEADERBOARD";
+ document.getElementById("topper") .innerHTML= y.toUpperCase()+"-"+x;
+}
